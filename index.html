@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Ignite Solution</title>
+</head>
+
+<body>
+    <div class="text" id="msg">Welcome</div>
+    <div class="lang-box">
+      <div class="lang-icon">🌐</div>
+      <select  id="lang">
+            <option selected value="English">English</option>
+            <option value="Hindi">Hindi</option>
+            <option value="French">French</option>
+      </select>
+    </div>
+
+    <script>
+        const lang = document.getElementById('lang');
+        
+        const getMsg = async ()=>{
+            var value = lang.value;
+            let data = await fetch("/hello?language="+value);
+            data = await data.json();
+            // console.log(data);
+            document.getElementById("msg").innerHTML = data.message.msgText;
+
+        }
+        lang.addEventListener('change', getMsg)
+        getMsg();
+    </script>
+
+</body>
+</html>

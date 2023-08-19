@@ -1,0 +1,8 @@
+To run the web project on your machine you need to follow the below steps:
+
+(Prerequisites: Must have Node.js installed on your system, you can verify if it is installed using commands "node -v", "npm -v")
+
+1. Open a Command Prompt or Terminal window and navigate to the project directory.
+2. Install dependencies using command "npm i".
+3. Use command "node index" to run the project.
+4. Once the project starts running, access the web page in your web browser by navigating to the address 'http://localhost:5000'.
